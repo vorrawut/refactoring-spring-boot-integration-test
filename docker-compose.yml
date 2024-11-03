@@ -1,0 +1,11 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: refactoring
+    environment:
+      - MONGODB_ROOT_USER=root
+      - MONGODB_ROOT_PASSWORD=password
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
